@@ -26,7 +26,8 @@
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth;background:var(--green)}
-    body{margin:0;background:var(--green);color:var(--ink);font-family:'Roboto',Arial,sans-serif;overflow-x:hidden}
+    body{margin:0;background:var(--green);color:var(--ink);font-family:'Roboto',Arial,sans-serif;overflow:hidden}
+    body.page-ready{overflow-x:hidden;overflow-y:auto}
     button,a,input,textarea{font:inherit}
     h1,h2,.ff-display{font-family:'Playfair Display',Georgia,serif}
 
@@ -344,6 +345,7 @@
     function switchToStatic(){
       heroStatic.classList.add('active');
       openingVideo.classList.add('fadeout');
+      document.body.classList.add('page-ready'); /* <-- BU SATIRI EKLE */
       setTimeout(()=>{ openingVideo.style.display='none'; },850);
       setTimeout(()=>{ heroCopy.classList.add('show'); },200);
     }
